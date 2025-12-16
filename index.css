@@ -2,13 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom scrollbar hiding for the nav */
+/* Custom scrollbar hiding for specific elements (like the nav) */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Global Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827; /* gray-900 - Matches body bg */
+  border-left: 1px solid #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151; /* gray-700 */
+  border-radius: 5px;
+  border: 2px solid #111827; /* Creates a padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563; /* gray-600 */
+}
+
+/* Firefox Scrollbar Support */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #374151 #111827;
 }
 
 @keyframes fadeIn {
